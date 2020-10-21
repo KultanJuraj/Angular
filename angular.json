@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "appslab-angular"
+    }
+  },
+  "defaultProject": "appslab-angular",
+  "cli": {
+    "analytics": "672a52b6-19cd-4930-a166-3bef344a4c50"
+  }
 }
