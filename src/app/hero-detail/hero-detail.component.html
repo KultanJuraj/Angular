@@ -1,5 +1,4 @@
 <div *ngIf="hero">
-
     <h2>{{hero.name | uppercase}} Details</h2>
     <div><span>id: </span>{{hero.id}}</div>
     <div>
@@ -7,5 +6,18 @@
         <input [(ngModel)]="hero.name" placeholder="name"/>
       </label>
     </div>
-  
+    <h2>Heroe's inventory</h2>
+    <div *ngIf="hero.items.length > 0; else elseB ">Owned Items:
+      <div *ngFor="let item of hero.items">{{ item.name }}</div>
+    </div>
+    <ng-template #elseBlock>
+      <div *ngIf="item; else elseB">
+      <div><span>id: </span>{{item.id}}</div>
+        <div>
+          <label>name: {{ item.name }}
+          </label>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #elseB>This hero has no item.</ng-template>
   </div>
