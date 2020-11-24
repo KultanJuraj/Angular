@@ -10,23 +10,16 @@ import { MessageService } from '../message.service';
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent implements OnInit {
-
-  selectedItem: Item;
   items: Item[];
 
-  constructor(private itemService: ItemService, private messageService: MessageService) { }
+  constructor(private itemService: ItemService) { }
 
   ngOnInit() {
     this.getItems();
   }
 
-  onSelect(item: Item): void {
-    this.selectedItem = item;
-    this.messageService.add(`ItemsComponent: Selected item id=${item.id}`);
-  }
-
   getItems(): void {
     this.itemService.getItems()
-        .subscribe(items => this.items = items);
+    .subscribe(items => this.items = items);
   }
 }
