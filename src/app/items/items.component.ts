@@ -11,6 +11,7 @@ import { MessageService } from '../message.service';
 })
 export class ItemsComponent implements OnInit {
   items: Item[];
+  selectedItem: Item;
 
   constructor(private itemService: ItemService) { }
 

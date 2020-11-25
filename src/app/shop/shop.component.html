@@ -1,0 +1,10 @@
+<h2>Shop</h2>
+
+<ul class="items">
+    <li *ngFor="let item of items">
+      <a *ngIf="item.isAvailable">
+        <span class="badge">{{item.id}}</span> {{item.name + " price:" + item.price }} 
+        <button (click)="buyItem(item)">Kupit</button>
+      </a>
+    </li>
+  </ul>
