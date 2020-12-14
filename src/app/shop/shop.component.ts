@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from '../item';
-import { ItemService } from '../item.service';
+import { ItemService } from './../item.service';
 import { Hero } from '../hero';
 import { HeroService } from './../hero.service';
 import { ActivatedRoute } from '@angular/router';
@@ -14,7 +14,6 @@ export class ShopComponent implements OnInit {
 
   items: Item[];
   hero: Hero;
-  heroCoins: number;
 
   constructor(private itemService: ItemService, private route: ActivatedRoute,
     private heroService: HeroService) { }
@@ -32,15 +31,15 @@ export class ShopComponent implements OnInit {
   loadHero(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.heroService.getHero(id)
-      .subscribe(hero => this.hero = hero);
-    this.heroCoins = this.hero.Coins;
+    .subscribe(hero => this.hero = hero);
   }
 
   buyItem(item: Item): void {
-    if (this.heroCoins > item.price){
-      this.heroCoins -= item.price;
-      item.isAvailable = false;
+    if (this.hero.Coins > item.price){
+      this.hero.Coins = this.hero.Coins - item.price;
       this.hero.items.push(item);
-    }
+      item.isAvailable = false;
+      this.heroService.updateHero(this.hero).subscribe();
+      this.itemService.updateItem(this.items).subscribe();}
   }
 }

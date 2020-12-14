@@ -10,6 +10,11 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ShopComponent } from './shop/shop.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { ItemSearchComponent } from './item-search/item-search.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +25,18 @@ import { ShopComponent } from './shop/shop.component';
     ItemDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    ShopComponent
+    ShopComponent,
+    HeroSearchComponent,
+    ItemSearchComponent
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+    InMemoryDataService, { dataEncapsulation: false })
   ],
   providers: [],
   bootstrap: [AppComponent]

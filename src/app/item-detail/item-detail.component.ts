@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Item } from '../item';
 import { ItemService } from '../item.service'
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-item-detail',
