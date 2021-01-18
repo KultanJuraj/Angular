@@ -4,7 +4,7 @@ import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
 
-enum SortBy { ID = "Id", NAME = "Name", MONEY = "Money" };
+enum SortBy { ID = "Id", NAME = "Name", MONEY = "Money", LIFE = "Life", STRENGHT = "Strenght" };
 class dropDownMenu{
   selected: any;
   descending: boolean = false;
@@ -60,6 +60,12 @@ export class HeroesComponent implements OnInit {
       case SortBy.NAME:
         this.heroes.sort((a, b) => a.name.localeCompare(b.name));
         break;
+      case SortBy.LIFE:
+          this.heroes.sort((a, b) => a.Lifes - b.Lifes);
+          break; 
+          case SortBy.STRENGHT:
+            this.heroes.sort((a, b) => a.Strenght - b.Strenght);
+            break;     
     }
     if (descending) this.heroes.reverse();
   }

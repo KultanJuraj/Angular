@@ -7,16 +7,16 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const heroes = [
-      { id: 1, name: 'Dr Nice', items: [], Coins:100 },
-      { id: 2, name: 'Narco', items: [], Coins:100 },
-      { id: 3, name: 'Bombasto', items: [], Coins:100 },
-      { id: 4, name: 'Celeritas', items: [], Coins:100 },
-      { id: 5, name: 'Magneta', items: [], Coins:100 },
-      { id: 6, name: 'RubberMan', items: [], Coins:100 },
-      { id: 7, name: 'Dynama', items: [], Coins:100 },
-      { id: 8, name: 'Dr IQ', items: [], Coins:100 },
-      { id: 9, name: 'Magma', items: [], Coins:100 },
-      { id: 10, name: 'Tornado', items: [], Coins:100 }
+      { id: 1, name: 'Dr Nice', items: [], Coins:100, Life:10, Strenght: 32},
+      { id: 2, name: 'Narco', items: [], Coins:100 , Life:10, Strenght: 48},
+      { id: 3, name: 'Bombasto', items: [], Coins:100, Life:10, Strenght: 39 },
+      { id: 4, name: 'Celeritas', items: [], Coins:100, Life:10, Strenght: 34 },
+      { id: 5, name: 'Magneta', items: [], Coins:100, Life:10, Strenght: 44 },
+      { id: 6, name: 'RubberMan', items: [], Coins:100, Life:10, Strenght: 40 },
+      { id: 7, name: 'Dynama', items: [], Coins:100, Life:10, Strenght: 44 },
+      { id: 8, name: 'Dr IQ', items: [], Coins:100, Life:10, Strenght: 40 },
+      { id: 9, name: 'Magma', items: [], Coins:100, Life:10, Strenght: 48 },
+      { id: 10, name: 'Tornado', items: [], Coins:100, Life:10, Strenght: 32 }
     ];
     const items = [
       { id: 1, name: 'Elixir of life' , price : 14, isAvailable:true},

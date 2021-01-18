@@ -64,5 +64,11 @@ export class ItemService {
       return of(result as T);
     };
   }
+  addItem(item: Item): Observable<Item> {
+    return this.http.post<Item>(this.itemsUrl, item, this.httpOptions).pipe(
+      tap((newItem: Item) => this.log(`added item w/ id=${newItem.id}`)),
+      catchError(this.handleError<Item>('addItem'))
+    );
+  }
 
   }

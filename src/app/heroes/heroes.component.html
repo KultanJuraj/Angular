@@ -8,7 +8,7 @@
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
     <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
+      <span class="badge">{{hero.id}}</span> {{hero.name}}, <span>Life:</span> {{hero.Life}}, <span>Strenght:</span> {{hero.Strenght}}
     </a>
   </li>
 </ul>
@@ -28,3 +28,4 @@
 
   </li>
 </ul>
+<div><button><a routerLink = '/hero-form'>Create Hero</a></button></div>
