@@ -1,10 +1,10 @@
 <h2>Shop</h2>
 
-<ul class="items">
-    <li *ngFor="let item of items">
+<mat-list role="list" class="items">
+    <mat-list-item role="listitem" *ngFor="let item of items">
       <a *ngIf="item.isAvailable">
-        <span class="badge">{{item.id}}</span> {{item.name + " price:" + item.price }} 
-        <button (click)="buyItem(item)">Buy</button>
+        <span class="badge">{{item.id}}</span>{{item.name}}<span>   Price:</span>{{item.price}}
+        <button mat-button color="accent" (click)="buyItem(item)">Buy</button>
       </a>
-    </li>
-  </ul>
+    </mat-list-item>
+  </mat-list>

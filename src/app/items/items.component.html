@@ -1,17 +1,17 @@
 <h2>Items</h2>
-<ul class="items">
-  <button (click)="dropdown.show = !dropdown.show">Sort By</button>
+<mat-list role="list" class="items">
+  <button mat-raised-button color="primary" (click)="dropdown.show = !dropdown.show">Sort By</button>
   <div *ngIf="dropdown.show">
   <button *ngFor="let option of dropdown.options" (click)="sortBy(option, dropdown.descending); dropdown.selected = option">{{option}}</button>
   <button (click)="dropdown.descending = !dropdown.descending; sortBy(dropdown.selected, dropdown.descending);">{{dropdown.descending ? "Descending" : "Ascending"}}</button>
   </div>
-<ul class="items">
-  <li *ngFor="let item of items">
+<mat-list role="list" class="items">
+  <mat-list-item role="listitem" *ngFor="let item of items">
     <a routerLink="/detail-it/{{item.id}}">
       <span class="badge">{{item.id}}</span> {{item.name}}
     </a>
-  </li>
-</ul>
+  </mat-list-item>
+</mat-list>
 
 <app-item-search></app-item-search>
-<div><button><a routerLink = '/item-form'>Create Item</a></button></div>
+<div><button mat-raised-button color="primary"><a routerLink = '/item-form'>Create Item</a></button></div>

@@ -40,6 +40,6 @@ export class ShopComponent implements OnInit {
       this.hero.items.push(item);
       item.isAvailable = false;
       this.heroService.updateHero(this.hero).subscribe();
-      this.itemService.updateItem(this.items).subscribe();}
+      this.itemService.updateItem(item).subscribe();}
   }
 }
